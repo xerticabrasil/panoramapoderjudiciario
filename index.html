@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SÍNTESE EXECUTIVA - Justiça em Números 2026 | Xertica.ai</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            celeste: '#239EA6',   /* Teal from image */
+                            magenta: '#C751A3',   /* Pink from image */
+                            violeta: '#5E4694',   /* Purple intersection */
+                            marron: '#1A1715',    /* Dark background */
+                            light: '#FFFEF8'      /* Off-white */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+                    },
+                    letterSpacing: {
+                        'swiss': '-0.02em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #1A1715;
+            color: #FFFEF8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Brutalist / Analog Input Style */
+        .custom-input {
+            background: #1A1715;
+            border: 2px solid #FFFEF8; 
+            color: #FFFEF8;
+            transition: all 0.2s ease;
+            border-radius: 0; 
+        }
+
+        .custom-input::placeholder {
+            color: rgba(255, 254, 248, 0.4);
+        }
+
+        .custom-input:focus {
+            border-color: #239EA6; 
+            outline: none;
+            box-shadow: 4px 4px 0px 0px #239EA6;
+        }
+
+        /* View transitions */
+        .view-section {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom Scrollbar */
+        .report-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .report-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        .report-scroll::-webkit-scrollbar-thumb {
+            background: #239EA6; 
+        }
+        .report-scroll::-webkit-scrollbar-thumb:hover {
+            background: #1A1715; 
+        }
+
+        /* Report Specific Styles for PDF Generation */
+        .report-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.25rem;
+            padding: 1.25rem;
+        }
+        
+        .table-custom th {
+            background-color: #1A1715;
+            color: #FFFEF8;
+            font-weight: 600;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .table-custom td {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            color: #334155;
+        }
+
+        .table-custom tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Estilos específicos para Impressão e PDF */
+        @media print {
+            body * { visibility: hidden; }
+            #view-result, #view-result * { visibility: visible; }
+            #view-result {
+                position: absolute; left: 0; top: 0; width: 100%;
+                background-color: #FFFEF8 !important;
+                margin: 0 !important; padding: 0 !important;
+            }
+            #report-actions { display: none !important; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+
+        .avoid-page-break {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+        }
+        
+        /* Grid de Destaques */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+
+    <nav class="w-full py-6 absolute top-0 z-50 border-b-2 border-brand-light/20 bg-brand-marron/90 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+            <img src="https://i.imgur.com/cVseTqH.jpeg" alt="Xertica.ai" class="h-8 md:h-10" onerror="this.src='https://placehold.co/100x100/1A1715/239EA6?text=X'">
+            <span class="text-brand-light/60 text-sm font-display tracking-widest uppercase hidden sm:block">Setor Público</span>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-24 md:pt-0">
+        <div class="w-full flex flex-col lg:flex-row min-h-screen items-stretch">
+            
+            <!-- Content Column (Left) -->
+            <div id="left-column" class="w-full lg:w-1/2 flex flex-col justify-center px-6 py-12 md:px-12 lg:pl-[max(3rem,calc((100vw-80rem)/2))] lg:pr-12 bg-brand-marron z-10 transition-all duration-500">
+                
+                <div class="space-y-8 max-w-2xl mt-12 lg:mt-0">
+                    <div class="inline-block px-4 py-1.5 bg-brand-violeta text-brand-light border-2 border-brand-light shadow-[4px_4px_0px_0px_#FFFEF8]">
+                        <span class="text-[13px] font-bold uppercase tracking-swiss font-display">Download Gratuito</span>
+                    </div>
+
+                    <h1 class="text-[42px] md:text-[56px] font-bold text-brand-light leading-[1.1] tracking-swiss font-display">
+                        Panorama do Poder Judiciário Brasileiro.
+                    </h1>
+
+                    <p class="text-[18px] text-brand-light/90 font-normal leading-[1.5] font-sans">
+                        Baixe agora a <strong>Síntese Executiva do Justiça em Números 2026</strong>. Preparamos um material focado nos dados cruciais para a tomada de decisão no setor público.
+                    </p>
+                </div>
+            </div>
+
+            <!-- App Column (Right) -->
+            <div id="right-column" class="w-full lg:w-1/2 relative min-h-[700px] flex items-center justify-center p-6 md:p-12 border-t-2 lg:border-t-0 lg:border-l-2 border-brand-light/20 bg-brand-marron transition-all duration-500">
+                
+                <!-- Background Decoration -->
+                <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden opacity-30 pointer-events-none">
+                    <div class="w-[80%] h-[80%] border-[1px] border-brand-celeste/20 rounded-full animate-[spin_60s_linear_infinite]"></div>
+                    <div class="absolute w-[60%] h-[60%] border-[1px] border-brand-magenta/20 rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
+                </div>
+                
+                <!-- CONTAINER DINÂMICO -->
+                <div class="relative z-10 w-full max-w-md bg-[#1A1715] border-4 border-brand-light p-8 shadow-[12px_12px_0px_0px_#239EA6] transition-all duration-500" id="app-container">
+
+                    <!-- VIEW: FORMULÁRIO -->
+                    <div id="view-form" class="view-section active">
+                        <h3 class="text-[28px] font-bold text-[#FFFEF8] mb-2 tracking-swiss font-display leading-[1.2]">Acesse o Relatório</h3>
+                        <p class="text-[15px] text-[#FFFEF8]/80 mb-6 font-sans leading-[1.4]">Preencha seus dados institucionais para visualizar e baixar o sumário executivo completo.</p>
+
+                        <form id="lead-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdksbGbp5I2UrZe2-tVMWdQ58E2mmFbauPeTanyW9zJDyr5Hg/formResponse" method="POST" target="hidden_iframe" class="space-y-5" onsubmit="submitForm(event)">
+                            <div>
+                                <label class="block text-[13px] font-bold text-[#FFFEF8] mb-1.5 font-sans tracking-wide">NOME COMPLETO <span class="text-brand-magenta">*</span></label>
+                                <input type="text" id="lead-name" name="entry.1938303801" placeholder="Seu nome" class="custom-input w-full px-4 py-2.5 text-[15px]" required>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-[13px] font-bold text-[#FFFEF8] mb-1.5 font-sans tracking-wide">CARGO <span class="text-brand-magenta">*</span></label>
+                                    <input type="text" id="lead-role" name="entry.1210018908" placeholder="Ex: Diretor, Assessor..." class="custom-input w-full px-4 py-2.5 text-[15px]" required>
+                                </div>
+                                <div>
+                                    <label class="block text-[13px] font-bold text-[#FFFEF8] mb-1.5 font-sans tracking-wide">ÓRGÃO / TRIBUNAL <span class="text-brand-magenta">*</span></label>
+                                    <input type="text" id="lead-org" name="entry.58235415" placeholder="Ex: TJSP, CNJ..." class="custom-input w-full px-4 py-2.5 text-[15px]" required>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[13px] font-bold text-[#FFFEF8] mb-1.5 font-sans tracking-wide">E-MAIL INSTITUCIONAL <span class="text-brand-magenta">*</span></label>
+                                <input type="email" id="lead-email" name="entry.283633950" placeholder="nome@orgao.jus.br" class="custom-input w-full px-4 py-2.5 text-[15px]" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-[13px] font-bold text-[#FFFEF8] mb-1.5 font-sans tracking-wide">TELEFONE / WHATSAPP <span class="text-brand-magenta">*</span></label>
+                                <input type="tel" id="lead-phone" name="entry.758361944" placeholder="(00) 00000-0000" class="custom-input w-full px-4 py-2.5 text-[15px]" required>
+                            </div>
+
+                            <button type="submit" class="w-full mt-2 py-4 bg-brand-celeste text-[#1A1715] font-bold text-[16px] font-display tracking-widest uppercase hover:bg-[#FFFEF8] border-2 border-brand-celeste hover:border-[#FFFEF8] transition-all duration-200 shadow-[4px_4px_0px_0px_#FFFEF8]">
+                                Liberar Documento
+                            </button>
+                            <p class="text-xs text-center text-brand-light/50 mt-4">Seus dados estão seguros. Não enviamos spam.</p>
+                        </form>
+                        
+                        <!-- Iframe oculto para receber a requisição do Google Forms sem redirecionar a página -->
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                    </div>
+
+                    <!-- VIEW: RESULTADO (RELATÓRIO BRANCO) -->
+                    <div id="view-result" class="view-section bg-[#FFFEF8] text-[#1A1715] -m-8 p-6 sm:p-10 h-[85vh] overflow-y-auto report-scroll relative">
+                        
+                        <!-- Barra de Ações (Fica escondida na impressão) -->
+                        <div class="flex flex-col sm:flex-row justify-between items-center mb-8 pb-4 border-b-2 border-gray-200 sticky top-0 bg-[#FFFEF8] z-20 py-2" id="report-actions">
+                            <div class="text-sm text-gray-500 font-mono">
+                                Acesso liberado para: <strong class="text-brand-celeste" id="display-user">Usuário</strong>
+                            </div>
+                            <button onclick="downloadPDF()" class="px-6 py-2.5 mt-4 sm:mt-0 bg-[#1A1715] text-[#FFFEF8] font-bold text-[14px] font-display hover:bg-brand-celeste transition-colors shadow-[4px_4px_0px_0px_#239EA6] flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                Baixar PDF (Sumário)
+                            </button>
+                        </div>
+
+                        <!-- CONTEÚDO DO PDF -->
+                        <div id="pdf-content" class="bg-[#FFFEF8] pb-10">
+                            
+                            <!-- PÁGINA 1 -->
+                            <div class="pdf-page p-2 sm:p-8 relative">
+                                <!-- Header Documento -->
+                                <div class="flex justify-between items-start border-b-4 border-[#1A1715] pb-6 mb-8">
+                                    <div>
+                                        <h4 class="text-brand-celeste font-bold tracking-widest text-[12px] uppercase mb-2 font-display">Síntese Executiva Setor Público</h4>
+                                        <h1 class="text-[28px] md:text-[36px] font-black text-[#1A1715] leading-tight font-display tracking-tight uppercase">
+                                            Panorama do Poder<br>Judiciário Brasileiro
+                                        </h1>
+                                        <h2 class="text-[20px] text-gray-600 font-display mt-1">Justiça em Números 2026</h2>
+                                    </div>
+                                    <div class="text-right">
+                                        <img src="https://i.imgur.com/cVseTqH.jpeg" alt="Xertica.ai" class="h-8 mb-2 ml-auto" style="filter: invert(1);" onerror="this.style.display='none'">
+                                        <p class="text-[10px] text-gray-500 max-w-[200px] font-mono leading-tight">Síntese dos principais dados - 23ª edição do relatório do CNJ (ano-base 2025).<br><br>Preparado pela Operação Brasil.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Big Numbers -->
+                                <div class="highlight-grid mb-10 avoid-page-break">
+                                    <div class="bg-[#1A1715] text-[#FFFEF8] p-5 rounded-sm border-l-4 border-brand-celeste">
+                                        <div class="text-[32px] font-black font-display leading-none mb-1">75,5 mi</div>
+                                        <div class="text-[13px] uppercase tracking-wider font-semibold opacity-80">Pendentes</div>
+                                    </div>
+                                    <div class="bg-[#1A1715] text-[#FFFEF8] p-5 rounded-sm border-l-4 border-brand-magenta">
+                                        <div class="text-[32px] font-black font-display leading-none mb-1">40,9 mi</div>
+                                        <div class="text-[13px] uppercase tracking-wider font-semibold opacity-80">Casos Novos</div>
+                                    </div>
+                                    <div class="bg-gray-100 text-[#1A1715] p-5 rounded-sm border-l-4 border-gray-400">
+                                        <div class="text-[32px] font-black font-display leading-none mb-1">45,2 mi</div>
+                                        <div class="text-[13px] uppercase tracking-wider font-semibold opacity-80">Baixados</div>
+                                    </div>
+                                    <div class="bg-gray-100 text-[#1A1715] p-5 rounded-sm border-l-4 border-gray-400">
+                                        <div class="text-[32px] font-black font-display leading-none mb-1">R$ 164,6 bi</div>
+                                        <div class="text-[13px] uppercase tracking-wider font-semibold opacity-80">Custo Total</div>
+                                    </div>
+                                </div>
+
+                                <!-- Sec 1: O Relatório & Estrutura -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                                    <div class="avoid-page-break">
+                                        <h3 class="text-[16px] font-bold uppercase tracking-widest text-brand-violeta border-b-2 border-brand-violeta pb-2 mb-4 font-display">O Relatório</h3>
+                                        <p class="text-[13px] text-gray-600 mb-4 font-sans italic">23 anos de transparência sobre o Judiciário. O DataJud é a base nacional do CNJ e fonte primária desde 2022. Pela primeira vez inclui dados do STF.</p>
+                                        <ul class="space-y-3 font-sans text-[14px]">
+                                            <li class="flex items-start gap-2"><span class="text-brand-violeta font-bold">»</span> <strong>91 órgãos</strong> cobertos (STF incluído de forma inédita)</li>
+                                            <li class="flex items-start gap-2"><span class="text-brand-violeta font-bold">»</span> <strong>17 anos</strong> de série histórica consolidada (2009-2025)</li>
+                                            <li class="flex items-start gap-2"><span class="text-brand-violeta font-bold">»</span> <strong>402 milhões</strong> de processos no DataJud</li>
+                                            <li class="flex items-start gap-2"><span class="text-brand-violeta font-bold">»</span> <strong>19,8 bilhões</strong> de movimentações registradas</li>
+                                        </ul>
+                                    </div>
+                                    <div class="avoid-page-break">
+                                        <h3 class="text-[16px] font-bold uppercase tracking-widest text-[#1A1715] border-b-2 border-[#1A1715] pb-2 mb-4 font-display">Estrutura (91 Órgãos)</h3>
+                                        <div class="flex gap-4 mb-4">
+                                            <div class="bg-gray-100 p-3 rounded w-1/2 text-center">
+                                                <div class="text-xl font-bold text-[#1A1715]">19.094</div>
+                                                <div class="text-xs text-gray-600">Juízes(as) ativos</div>
+                                            </div>
+                                            <div class="bg-gray-100 p-3 rounded w-1/2 text-center">
+                                                <div class="text-xl font-bold text-[#1A1715]">281.252</div>
+                                                <div class="text-xs text-gray-600">Servidores(as)</div>
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-x-2 gap-y-1 text-[12px] font-mono text-gray-700">
+                                            <div>• Justiça Estadual: 27 TJs</div>
+                                            <div>• Justiça Federal: 6 TRFs</div>
+                                            <div>• Justiça Trabalho: 24 TRTs</div>
+                                            <div>• Justiça Eleitoral: 27 TREs</div>
+                                            <div>• Justiça Militar: 3 TJMs</div>
+                                            <div>• Superiores: STJ, TST, TSE, STM</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sec 2: Movimentação Processual -->
+                                <div class="mb-10 avoid-page-break">
+                                    <h3 class="text-[16px] font-bold uppercase tracking-widest text-brand-celeste border-b-2 border-brand-celeste pb-2 mb-4 font-display">Movimentação Processual 2025</h3>
+                                    <p class="text-[14px] text-gray-700 font-sans mb-4">Estabilização da demanda. Pela primeira vez em anos o Judiciário baixou mais do que recebeu, reduzindo o estoque que ainda equivale a 1,8 vez a demanda anual.</p>
+                                    
+                                    <table class="w-full table-custom">
+                                        <thead>
+                                            <tr>
+                                                <th>Fluxo</th>
+                                                <th>Volume</th>
+                                                <th>Variação Ano/Recorde</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-bold">Casos Novos (Entrada)</td>
+                                                <td>40,9 milhões</td>
+                                                <td class="text-red-600 font-medium">+3,5% (Maior valor histórico)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-bold">Processos Baixados (Saída)</td>
+                                                <td>45,2 milhões</td>
+                                                <td class="text-green-600 font-medium">Recorde histórico, estável vs. 2024</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-bold">Processos Pendentes (Acervo)</td>
+                                                <td>75,5 milhões</td>
+                                                <td class="text-brand-celeste font-medium">-4,5% (-3,5 mi) Menor patamar em 9 anos</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Sec 3: Produtividade e Eficiência -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 avoid-page-break">
+                                    <div>
+                                        <h3 class="text-[16px] font-bold uppercase tracking-widest text-[#1A1715] border-b-2 border-gray-200 pb-2 mb-4 font-display">Produtividade Recorde</h3>
+                                        <ul class="space-y-4 font-sans text-[14px]">
+                                            <li class="flex flex-col">
+                                                <span class="text-[24px] font-black text-[#1A1715] leading-none">2.558</span>
+                                                <span class="text-gray-600 text-sm mt-1">Processos baixados por magistrado(a). <br><strong>+88,6% acumulado em 16 anos.</strong></span>
+                                            </li>
+                                            <li class="flex flex-col">
+                                                <span class="text-[24px] font-black text-[#1A1715] leading-none">1.853</span>
+                                                <span class="text-gray-600 text-sm mt-1">Casos novos por magistrado(a). Maior carga.</span>
+                                            </li>
+                                            <li class="flex flex-col">
+                                                <span class="text-[24px] font-black text-[#1A1715] leading-none">155</span>
+                                                <span class="text-gray-600 text-sm mt-1">Casos novos por servidor(a). Maior valor.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-[16px] font-bold uppercase tracking-widest text-[#1A1715] border-b-2 border-gray-200 pb-2 mb-4 font-display">Eficiência e Gargalos</h3>
+                                        <div class="grid grid-cols-2 gap-3 font-sans">
+                                            <div class="bg-gray-50 p-3 rounded border border-gray-200">
+                                                <div class="text-lg font-bold text-brand-celeste">56,6%</div>
+                                                <div class="text-[11px] font-bold uppercase text-gray-500 mt-1">Congestionamento Líquido</div>
+                                                <div class="text-[11px] text-gray-600 leading-tight mt-1">De 100 que tramitam, ~43 são baixados.</div>
+                                            </div>
+                                            <div class="bg-gray-50 p-3 rounded border border-gray-200">
+                                                <div class="text-lg font-bold text-brand-celeste">110,5%</div>
+                                                <div class="text-[11px] font-bold uppercase text-gray-500 mt-1">Índice Atend. Demanda</div>
+                                                <div class="text-[11px] text-gray-600 leading-tight mt-1">Baixou mais do que entrou.</div>
+                                            </div>
+                                            <div class="bg-red-50 p-3 rounded border border-red-200">
+                                                <div class="text-lg font-bold text-red-600">72,4%</div>
+                                                <div class="text-[11px] font-bold uppercase text-red-800 mt-1">Congest. Execução Fiscal</div>
+                                                <div class="text-[11px] text-gray-700 leading-tight mt-1">De cada 100, só 28 baixados. Gargalo crônico (~22% do acervo).</div>
+                                            </div>
+                                            <div class="bg-gray-50 p-3 rounded border border-gray-200">
+                                                <div class="text-lg font-bold text-[#1A1715]">1,8x</div>
+                                                <div class="text-[11px] font-bold uppercase text-gray-500 mt-1">Estoque vs Demanda</div>
+                                                <div class="text-[11px] text-gray-600 leading-tight mt-1">Quase 2 anos de trabalho represados.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sec 4: Tempo e Custos -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 avoid-page-break">
+                                    <div>
+                                        <h3 class="text-[16px] font-bold uppercase tracking-widest text-[#1A1715] border-b-2 border-gray-200 pb-2 mb-4 font-display">Tempo Médio (Conhecimento / Execução)</h3>
+                                        <table class="w-full text-[12px] font-mono text-left">
+                                            <tr class="border-b"><th class="py-2">Justiça Estadual</th><td class="py-2">2a 8m</td><td class="py-2 text-red-600">4a 9m</td></tr>
+                                            <tr class="border-b"><th class="py-2">Justiça Federal</th><td class="py-2">2a 0m</td><td class="py-2 text-red-600">5a 3m</td></tr>
+                                            <tr class="border-b"><th class="py-2">Justiça Trabalho</th><td class="py-2">8m</td><td class="py-2">3a 9m</td></tr>
+                                            <tr class="pt-2"><th class="py-2 text-gray-500">Média Geral (Pendentes)</th><td class="py-2 text-gray-500" colspan="2">3 anos e 7 meses</td></tr>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-[16px] font-bold uppercase tracking-widest text-[#1A1715] border-b-2 border-gray-200 pb-2 mb-4 font-display">Custo da Justiça (R$)</h3>
+                                        <ul class="space-y-3 font-sans text-[13px]">
+                                            <li class="flex justify-between border-b pb-1"><span>Despesa Total (2025)</span> <strong>164,6 bilhões (+7,8%)</strong></li>
+                                            <li class="flex justify-between border-b pb-1"><span>Custo por Habitante/Ano</span> <strong>R$ 771,48</strong></li>
+                                            <li class="flex justify-between border-b pb-1"><span>Arrecadação (Cobre 41%)</span> <strong>R$ 68,2 bilhões</strong></li>
+                                            <li class="flex justify-between text-brand-magenta font-bold"><span>Despesa com Pessoal</span> <strong>90% do total</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Sec 5: Comparação UE & Leitura Estratégica -->
+                                <div class="bg-gray-100 p-6 rounded-lg avoid-page-break">
+                                    <h3 class="text-[18px] font-bold uppercase tracking-widest text-brand-violeta mb-4 font-display text-center">Leitura Estratégica - Xertica.ai</h3>
+                                    
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                        <div>
+                                            <div class="w-8 h-8 bg-brand-violeta text-white font-bold flex items-center justify-center rounded-full mb-3">1</div>
+                                            <h4 class="font-bold text-[14px] mb-2 leading-tight">Demanda estabilizou, acervo recuou</h4>
+                                            <p class="text-[12px] text-gray-600 font-sans">Pela 1ª vez em anos baixou-se mais do que entrou (IAD 110,5%); pendentes no menor nível em 9 anos.</p>
+                                        </div>
+                                        <div>
+                                            <div class="w-8 h-8 bg-brand-violeta text-white font-bold flex items-center justify-center rounded-full mb-3">2</div>
+                                            <h4 class="font-bold text-[14px] mb-2 leading-tight">Execução fiscal é o gargalo crônico</h4>
+                                            <p class="text-[12px] text-gray-600 font-sans">72,4% de congestionamento e ~22% do acervo. É o grande ralo de produtividade do sistema.</p>
+                                        </div>
+                                        <div>
+                                            <div class="w-8 h-8 bg-brand-violeta text-white font-bold flex items-center justify-center rounded-full mb-3">3</div>
+                                            <h4 class="font-bold text-[14px] mb-2 leading-tight">Pressão sem paralelo (Brasil x UE)</h4>
+                                            <p class="text-[12px] text-gray-600 font-sans">Demanda 4,3x maior e carga por magistrado 8,6x a média da UE (2.144 vs 249 casos). Eficiência é obrigatória.</p>
+                                        </div>
+                                        <div>
+                                            <div class="w-8 h-8 bg-brand-violeta text-white font-bold flex items-center justify-center rounded-full mb-3">4</div>
+                                            <h4 class="font-bold text-[14px] mb-2 leading-tight">A Justiça já é digital</h4>
+                                            <p class="text-[12px] text-gray-600 font-sans">97,9% do acervo eletrônico e 402 mi de processos estruturados. Terreno pronto para <strong>Inteligência Artificial (IA)</strong>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-8 text-center text-[10px] text-gray-400 font-mono border-t pt-4">
+                                    Nenhum dado foi alterado ou acrescentado. Fonte: CNJ - Justiça em Números 2026 (ano-base 2025). 
+                                </div>
+                            </div>
+                        </div> <!-- Fim pdf-content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function submitForm(e) {
+            // Removido o 'e.preventDefault()' propositalmente para permitir 
+            // que o formulário dispare o envio para o target="hidden_iframe".
+            
+            // Coletar dados do formulário
+            const name = document.getElementById('lead-name').value;
+            const role = document.getElementById('lead-role').value;
+            const org = document.getElementById('lead-org').value;
+            const email = document.getElementById('lead-email').value;
+            
+            // Atualizar o nome do usuário no topo do relatório
+            document.getElementById('display-user').innerText = `${name} (${role} - ${org})`;
+            
+            // Transição visual
+            document.getElementById('app-container').style.boxShadow = '12px 12px 0px 0px #C751A3';
+            
+            // Aqui normalmente entraria a integração via fetch() para enviar o lead (Hubspot, RD, Sheets)
+            // console.log("Lead capturado:", {name, role, org, email});
+            
+            // Expandir a área para o relatório e esconder o texto de marketing
+            document.getElementById('left-column').classList.add('hidden', 'lg:hidden');
+            document.getElementById('right-column').classList.remove('lg:w-1/2');
+            document.getElementById('right-column').classList.add('w-full');
+            document.getElementById('app-container').classList.remove('max-w-md');
+            document.getElementById('app-container').classList.add('max-w-5xl');
+            
+            // Mostrar a View do Relatório
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.getElementById('view-result').classList.add('active');
+        }
+
+        function downloadPDF() {
+            // Direciona para o link público do Google Drive em uma nova aba
+            // IMPORTANTE: Se o seu link for outro, basta trocar a URL entre aspas simples abaixo:
+            window.open('https://drive.google.com/file/d/1ID4BCxhRVWi8F-kmzIUzMJn3l-4CSNIH/view?usp=sharing', '_blank');
+        }
+    </script>
+</body>
+</html>
